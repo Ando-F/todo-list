@@ -18,7 +18,7 @@ let domManip = (function () {
     outerDiv.appendChild(insideDivRight);
 
     return {
-
+     
     }
 })()
 
