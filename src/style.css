@@ -7,12 +7,36 @@
     border: 1px solid;
 }
 
+/* styling left bar */
 .inside-div-left {
+    padding: 10px;
+    margin-right: 20px;
+
     border-radius: 5px;
     border: 1px solid;
 }
 
+.left-menu-divs {
+    background-color: lightgray;
+
+    border-radius: 5px;
+
+    margin: 3px;
+    padding: 1px;
+}
+
+/* styling right bar */
 .inside-div-right {
+    padding: 10px;
+
     border-radius: 5px;
     border: 1px solid;
+}
+
+.todos {
+    margin: 3px;
+    padding: 1px;
+
+    border: 1px solid;
+    border-radius: 5px;
 }
