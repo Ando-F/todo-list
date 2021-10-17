@@ -1,0 +1,18 @@
+.outer-div-style {
+    display: flex;
+
+    padding: 10px;
+
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.inside-div-left {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.inside-div-right {
+    border-radius: 5px;
+    border: 1px solid;
+}
