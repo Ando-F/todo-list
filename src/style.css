@@ -40,3 +40,9 @@
     border: 1px solid;
     border-radius: 5px;
 }
+
+/* styling create form */
+#create-form {
+    display: flex;
+    gap: 10px;
+}

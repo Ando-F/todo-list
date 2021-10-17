@@ -29,14 +29,16 @@ let domManip = (function () {
     createButton.classList.add('todos');
     insideDivRight.appendChild(createButton);
 
-    // append everything
+    // append main divs
     mainDiv.appendChild(outerDiv);
     outerDiv.appendChild(insideDivLeft);
     outerDiv.appendChild(insideDivRight);
 
     return {
+         mainDiv: mainDiv,
          insideDivRight: insideDivRight,
-         insideDivLeft: insideDivLeft
+         insideDivLeft: insideDivLeft,
+         createButton: createButton
     }
 })()
 
