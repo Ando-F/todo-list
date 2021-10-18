@@ -1,7 +1,27 @@
 import {domManip} from "./skeleton";
+import {createTask} from "./create-task";
 
 let createModule = (function() {
     let formQuantity = 0;
+
+    let nameInput = document.createElement('input');
+    nameInput.id = 'name-input';
+    nameInput.setAttribute('type', 'text');
+
+    let status = document.createElement('input');
+    status.setAttribute('type', 'checkbox');
+    if (status.checked) {
+        status.setAttribute('value', 'important');
+    } else {
+        status.setAttribute('value', '');
+    }
+    status.id = 'status-input';
+
+    let dateInput = document.createElement('input');
+    dateInput.setAttribute('type', 'date');
+
+    let descrInput = document.createElement('input');
+    descrInput.setAttribute('type', 'text');
 
     domManip.createButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -23,8 +43,6 @@ let createModule = (function() {
             nameLabel.textContent = 'name:';
             nameDiv.appendChild(nameLabel);
 
-            let nameInput = document.createElement('input');
-            nameInput.setAttribute('type', 'text');
             nameDiv.appendChild(nameInput);
 
             createForm.appendChild(nameDiv);
@@ -33,9 +51,6 @@ let createModule = (function() {
             let statusDiv = document.createElement('div');
             statusDiv.classList.add('create-divs');
 
-            let status = document.createElement('input');
-            status.setAttribute('type', 'checkbox');
-            status.id = 'status-input';
             statusDiv.appendChild(status);
 
             let statusLabel = document.createElement('p');
@@ -52,8 +67,6 @@ let createModule = (function() {
             dateLabel.textContent = 'date:';
             dateDiv.appendChild(dateLabel);
 
-            let dateInput = document.createElement('input');
-            dateInput.setAttribute('type', 'date');
             dateDiv.appendChild(dateInput);
 
             createForm.appendChild(dateDiv);
@@ -66,11 +79,23 @@ let createModule = (function() {
             descrLabel.textContent = 'description';
             descrDiv.appendChild(descrLabel);
 
-            let descrInput = document.createElement('input');
-            descrInput.setAttribute('type', 'text');
             descrDiv.appendChild(descrInput);
 
             createForm.appendChild(descrDiv);
+
+            // add button to create task
+            let createButton = document.createElement('button');
+            createButton.textContent = 'create new task';
+            createButton.addEventListener('click', () => {
+                createTask.workWithTasks();
+
+                // close form on button click
+                while (divForCreateForm.firstChild) {
+                    divForCreateForm.removeChild(divForCreateForm.firstChild);
+                }
+                formQuantity = 0;
+            })
+            createForm.appendChild(createButton);
 
             // add button to close form
             let closeButton = document.createElement('button');
@@ -92,7 +117,7 @@ let createModule = (function() {
     })
 
     return {
-
+        nameInput: nameInput
     }
 
 })()
