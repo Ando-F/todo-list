@@ -43,6 +43,18 @@
 
 /* styling create form */
 #create-form {
+    border: 1px solid;
+    border-radius: 5px;
+
+    padding: 10px;
+
+    width: 300px;
+}
+
+.create-divs {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
+
+
