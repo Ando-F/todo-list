@@ -1,72 +1,93 @@
 import {domManip} from "./skeleton";
 
 let createModule = (function() {
+    let formQuantity = 0;
+
     domManip.createButton.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // main div for every input
-        let createForm = document.createElement('div');
-        createForm.id = 'create-form';
+        if (formQuantity < 1) {
+            // create div for createForm div
+            let divForCreateForm = document.createElement('div');
+            divForCreateForm.id = 'div-for-create-form';
 
-        // creating name input
-        let nameDiv = document.createElement('div')
-        nameDiv.classList.add('create-divs');
+            // main div for every input
+            let createForm = document.createElement('div');
+            createForm.id = 'create-form';
 
-        let nameLabel = document.createElement('p');
-        nameLabel.textContent = 'name:';
-        nameDiv.appendChild(nameLabel);
+            // creating name input
+            let nameDiv = document.createElement('div')
+            nameDiv.classList.add('create-divs');
 
-        let nameInput = document.createElement('input');
-        nameInput.setAttribute('type', 'text');
-        nameDiv.appendChild(nameInput);
+            let nameLabel = document.createElement('p');
+            nameLabel.textContent = 'name:';
+            nameDiv.appendChild(nameLabel);
 
-        createForm.appendChild(nameDiv);
+            let nameInput = document.createElement('input');
+            nameInput.setAttribute('type', 'text');
+            nameDiv.appendChild(nameInput);
 
-        // creating status input
-        let statusDiv = document.createElement('div');
-        statusDiv.classList.add('create-divs');
+            createForm.appendChild(nameDiv);
 
-        let status = document.createElement('input');
-        status.setAttribute('type', 'checkbox');
-        status.id = 'status-input';
-        statusDiv.appendChild(status);
+            // creating status input
+            let statusDiv = document.createElement('div');
+            statusDiv.classList.add('create-divs');
 
-        let statusLabel = document.createElement('p');
-        statusLabel.textContent = 'important';
-        statusDiv.appendChild(statusLabel);
+            let status = document.createElement('input');
+            status.setAttribute('type', 'checkbox');
+            status.id = 'status-input';
+            statusDiv.appendChild(status);
 
-        createForm.appendChild(statusDiv);
+            let statusLabel = document.createElement('p');
+            statusLabel.textContent = 'important';
+            statusDiv.appendChild(statusLabel);
 
-        // creating data input
-        let dateDiv = document.createElement('div');
-        dateDiv.classList.add('create-divs');
+            createForm.appendChild(statusDiv);
 
-        let dateLabel = document.createElement('p');
-        dateLabel.textContent = 'date:';
-        dateDiv.appendChild(dateLabel);
+            // creating data input
+            let dateDiv = document.createElement('div');
+            dateDiv.classList.add('create-divs');
 
-        let dateInput = document.createElement('input');
-        dateInput.setAttribute('type', 'date');
-        dateDiv.appendChild(dateInput);
+            let dateLabel = document.createElement('p');
+            dateLabel.textContent = 'date:';
+            dateDiv.appendChild(dateLabel);
 
-        createForm.appendChild(dateDiv);
+            let dateInput = document.createElement('input');
+            dateInput.setAttribute('type', 'date');
+            dateDiv.appendChild(dateInput);
 
-        // creating description input
-        let descrDiv = document.createElement('div');
-        descrDiv.classList.add('create-divs');
+            createForm.appendChild(dateDiv);
 
-        let descrLabel = document.createElement('p');
-        descrLabel.textContent = 'description';
-        descrDiv.appendChild(descrLabel);
+            // creating description input
+            let descrDiv = document.createElement('div');
+            descrDiv.classList.add('create-divs');
 
-        let descrInput = document.createElement('input');
-        descrInput.setAttribute('type', 'text');
-        descrDiv.appendChild(descrInput);
+            let descrLabel = document.createElement('p');
+            descrLabel.textContent = 'description';
+            descrDiv.appendChild(descrLabel);
 
-        createForm.appendChild(descrDiv);
+            let descrInput = document.createElement('input');
+            descrInput.setAttribute('type', 'text');
+            descrDiv.appendChild(descrInput);
 
-        domManip.mainDiv.appendChild(createForm);
+            createForm.appendChild(descrDiv);
 
+            // add button to close form
+            let closeButton = document.createElement('button');
+            closeButton.textContent = 'close form';
+            closeButton.addEventListener('click', () => {
+                while (divForCreateForm.firstChild) {
+                    divForCreateForm.removeChild(divForCreateForm.firstChild);
+                }
+                formQuantity = 0;
+            })
+            createForm.appendChild(closeButton);
+
+            divForCreateForm.appendChild(createForm);
+            domManip.mainDiv.appendChild(divForCreateForm);
+        }
+
+        formQuantity++;
 
     })
 
