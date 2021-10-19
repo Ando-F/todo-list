@@ -1,10 +1,10 @@
 let objectCreate = (function() {
     class createTodo {
-        constructor(name, status, date, note) {
+        constructor(name, status, date, description) {
             this.name = name;
             this.status = status;
             this.date = date;
-            this.note = note;
+            this.description = description;
         }
     }
 

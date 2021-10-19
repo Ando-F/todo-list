@@ -4,22 +4,30 @@ import {createTask} from "./create-task";
 let createModule = (function() {
     let formQuantity = 0;
 
+    // name input
     let nameInput = document.createElement('input');
     nameInput.id = 'name-input';
     nameInput.setAttribute('type', 'text');
 
+    // status input
     let status = document.createElement('input');
     status.setAttribute('type', 'checkbox');
-    if (status.checked) {
-        status.setAttribute('value', 'important');
-    } else {
-        status.setAttribute('value', '');
-    }
+    status.checked = true;
+    status.setAttribute('value', 'important');
+    status.addEventListener('click', () => {
+        if (status.checked) {
+            status.setAttribute('value', 'important');
+        } else {
+            status.setAttribute('value', '');
+        }
+    })
     status.id = 'status-input';
 
+    // date input
     let dateInput = document.createElement('input');
     dateInput.setAttribute('type', 'date');
 
+    //description input
     let descrInput = document.createElement('input');
     descrInput.setAttribute('type', 'text');
 
@@ -87,6 +95,10 @@ let createModule = (function() {
             let createButton = document.createElement('button');
             createButton.textContent = 'create new task';
             createButton.addEventListener('click', () => {
+                while (createTask.tasksContainer.firstChild) {
+                    createTask.tasksContainer.removeChild(createTask.tasksContainer.firstChild);
+                }
+
                 createTask.workWithTasks();
 
                 // close form on button click
@@ -117,7 +129,10 @@ let createModule = (function() {
     })
 
     return {
-        nameInput: nameInput
+        nameInput: nameInput,
+        status: status,
+        dateInput: dateInput,
+        descrInput: descrInput
     }
 
 })()
