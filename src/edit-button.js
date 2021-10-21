@@ -2,7 +2,7 @@ let editButtonModule = (function() {
    'use strict';
 
    function editButton() {
-
+      alert('hello');
    }
 
    return {
