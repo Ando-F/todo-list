@@ -38,6 +38,11 @@ html {
 }
 
 #create-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
     position: fixed;
     top: 100px;
 
@@ -47,7 +52,14 @@ html {
 
     padding: 10px;
 
-    width: 300px;
+    width: 460px;
+}
+
+#div-for-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 460px;
 }
 
 .create-divs {
@@ -99,23 +111,25 @@ html {
     border: 1px solid;
     border-radius: 5px;
     max-width: 1135.340px;
+
+    padding: 3px 10px;
 }
 
 .first-level {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    padding: 3px 10px;
-    margin: 1px;
+#task-checkbox {
+    margin: 3px;
 }
 
 .second-level {
     display: flex;
     align-items: center;
 
-    padding: 3px 10px;
-    margin: 1px;
+    padding-left: 41px;
 }
 
 #create-button {

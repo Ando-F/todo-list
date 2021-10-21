@@ -91,6 +91,10 @@ let createModule = (function() {
 
             createForm.appendChild(descrDiv);
 
+            // add div for buttons
+            const divForButtons = document.createElement('div');
+            divForButtons.id = 'div-for-buttons';
+
             // add button to create task
             let createButton = document.createElement('button');
             createButton.textContent = 'create new task';
@@ -107,7 +111,8 @@ let createModule = (function() {
                 }
                 formQuantity = 0;
             })
-            createForm.appendChild(createButton);
+
+            divForButtons.appendChild(createButton);
 
             // add button to close form
             let closeButton = document.createElement('button');
@@ -118,7 +123,9 @@ let createModule = (function() {
                 }
                 formQuantity = 0;
             })
-            createForm.appendChild(closeButton);
+            divForButtons.appendChild(closeButton);
+
+            createForm.appendChild(divForButtons);
 
             divForCreateForm.appendChild(createForm);
             domManip.mainDiv.appendChild(divForCreateForm);
