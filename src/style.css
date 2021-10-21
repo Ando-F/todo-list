@@ -31,40 +31,6 @@ html {
     padding: 10px;
 }
 
-/* styling left bar */
-.inside-div-left {
-    padding: 10px;
-    margin-right: 20px;
-
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-.left-menu-divs {
-    background-color: lightgray;
-
-    border-radius: 5px;
-
-    margin: 3px;
-    padding: 1px;
-}
-
-/* styling right bar */
-.inside-div-right {
-    padding: 10px;
-
-    border-radius: 5px;
-    border: 1px solid;
-}
-
-.todos {
-    margin: 3px;
-    padding: 1px;
-
-    border: 1px solid;
-    border-radius: 5px;
-}
-
 /* styling create form */
 #div-for-create-form {
     display: flex;
@@ -90,13 +56,80 @@ html {
     align-items: center;
 }
 
-/* styling tasks */
-.div-task {
-    padding: 1px;
-    margin: 1px;
+/* styling left bar */
+.inside-div-left {
+    padding: 10px;
+    margin-right: 20px;
 
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.left-menu-divs {
+    background-color: lightgray;
+
+    border-radius: 5px;
+
+    margin: 3px;
+    padding: 1px;
+}
+
+/* styling right bar */
+.inside-div-right {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+
+    padding: 10px;
+
+    border-radius: 5px;
+    border: 1px solid;
+    width: 100%;
+}
+
+/* styling tasks */
+#div-for-tasks{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.div-task {
     border: 1px solid;
     border-radius: 5px;
+    max-width: 1135.340px;
+}
+
+.first-level {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3px 10px;
+    margin: 1px;
+}
+
+.second-level {
+    display: flex;
+    align-items: center;
+
+    padding: 3px 10px;
+    margin: 1px;
+}
+
+#create-button {
+    border: 1px solid;
+    border-radius: 5px;
+    max-width: 1135.340px;
+
+    padding: 3px 10px;
+    margin: 1px;
+}
+
+#html-div {
+    display: flex;
+    gap: 20px;
 }
 
 

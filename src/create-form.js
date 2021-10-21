@@ -95,8 +95,8 @@ let createModule = (function() {
             let createButton = document.createElement('button');
             createButton.textContent = 'create new task';
             createButton.addEventListener('click', () => {
-                while (createTask.tasksContainer.firstChild) {
-                    createTask.tasksContainer.removeChild(createTask.tasksContainer.firstChild);
+                while (domManip.divForTasks.firstChild) {
+                    domManip.divForTasks.removeChild(domManip.divForTasks.firstChild);
                 }
 
                 createTask.workWithTasks();

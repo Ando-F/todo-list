@@ -31,11 +31,12 @@ let domManip = (function () {
     insideDivRight.classList.add('inside-div-right');
 
     let divForTasks = document.createElement('div');
+    divForTasks.id = 'div-for-tasks';
     insideDivRight.appendChild(divForTasks);
 
     let createButton = document.createElement('div');
     createButton.innerHTML = 'create new task';
-    createButton.classList.add('todos');
+    createButton.id = 'create-button';
     insideDivRight.appendChild(createButton);
 
     // append main divs
@@ -48,7 +49,7 @@ let domManip = (function () {
          insideDivRight: insideDivRight,
          insideDivLeft: insideDivLeft,
          createButton: createButton,
-        divForTasks: divForTasks
+         divForTasks: divForTasks
     }
 })()
 
