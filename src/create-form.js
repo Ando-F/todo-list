@@ -31,14 +31,31 @@ let createModule = (function() {
     let descrInput = document.createElement('input');
     descrInput.setAttribute('type', 'text');
 
+    // create div for createForm div
+    const divForCreateForm = document.createElement('div');
+    divForCreateForm.id = 'div-for-create-form';
+
+    function clearTasksDivs() {
+        while (domManip.divForTasks.firstChild) {
+            domManip.divForTasks.removeChild(domManip.divForTasks.firstChild);
+        }
+    }
+
+    function clearAndCreate() {
+        clearTasksDivs();
+        createTask.workWithTasks();
+
+        // close form on button click
+        while (divForCreateForm.firstChild) {
+            divForCreateForm.removeChild(divForCreateForm.firstChild);
+        }
+        formQuantity = 0;
+    }
+
     domManip.createButton.addEventListener('click', (e) => {
         e.preventDefault();
 
         if (formQuantity < 1) {
-            // create div for createForm div
-            const divForCreateForm = document.createElement('div');
-            divForCreateForm.id = 'div-for-create-form';
-
             // main div for every input
             const createForm = document.createElement('div');
             createForm.id = 'create-form';
@@ -99,17 +116,7 @@ let createModule = (function() {
             const createButton = document.createElement('button');
             createButton.textContent = 'create new task';
             createButton.addEventListener('click', () => {
-                while (domManip.divForTasks.firstChild) {
-                    domManip.divForTasks.removeChild(domManip.divForTasks.firstChild);
-                }
-
-                createTask.workWithTasks();
-
-                // close form on button click
-                while (divForCreateForm.firstChild) {
-                    divForCreateForm.removeChild(divForCreateForm.firstChild);
-                }
-                formQuantity = 0;
+                clearAndCreate();
             })
 
             divForButtons.appendChild(createButton);
@@ -140,6 +147,10 @@ let createModule = (function() {
         status: status,
         dateInput: dateInput,
         descrInput: descrInput,
+
+        clearAndCreate: clearAndCreate,
+        clearTasksDivs: clearTasksDivs
+
     }
 
 })()
