@@ -41,15 +41,17 @@ let createModule = (function() {
         }
     }
 
-    function clearAndCreate() {
-        clearTasksDivs();
-        createTask.workWithTasks();
-
-        // close form on button click
+    function closeCreateForm() {
         while (divForCreateForm.firstChild) {
             divForCreateForm.removeChild(divForCreateForm.firstChild);
         }
         formQuantity = 0;
+    }
+
+    function clearAndCreate() {
+        clearTasksDivs();
+        createTask.workWithTasks();
+        closeCreateForm();
     }
 
     domManip.createButton.addEventListener('click', (e) => {
@@ -125,10 +127,7 @@ let createModule = (function() {
             const closeButton = document.createElement('button');
             closeButton.textContent = 'close form';
             closeButton.addEventListener('click', () => {
-                while (divForCreateForm.firstChild) {
-                    divForCreateForm.removeChild(divForCreateForm.firstChild);
-                }
-                formQuantity = 0;
+                closeCreateForm();
             })
             divForButtons.appendChild(closeButton);
 
