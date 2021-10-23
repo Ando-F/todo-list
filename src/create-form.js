@@ -145,6 +145,7 @@ let createModule = (function() {
     }
 
     function appendElements() {
+        createTask.clearCreateButton();
         appendInputs();
         makeButtons();
         appendMainDivs();
@@ -170,7 +171,8 @@ let createModule = (function() {
         clearTasksDivs: clearTasksDivs,
         appendInputs: appendInputs,
         appendMainDivs: appendMainDivs,
-        createCloseButton: createCloseButton
+        createCloseButton: createCloseButton,
+        closeCreateForm: closeCreateForm
     }
 })()
 
