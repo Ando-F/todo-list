@@ -166,6 +166,7 @@ let createModule = (function() {
         descrInput: descrInput,
         formQuantity: formQuantity,
         createForm: createForm,
+        closeButton: closeButton,
 
         clearAndCreate: clearAndCreate,
         clearTasksDivs: clearTasksDivs,

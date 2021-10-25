@@ -3,13 +3,19 @@ html {
     margin: 0;
 }
 
+button {
+    padding: 5px;
+
+    border-radius: 10px;
+    border: none;
+    background-color: #C8E3D4;
+}
+
 .outer-div-style {
     display: flex;
 
     padding: 10px;
-
-    border-radius: 5px;
-    border: 1px solid;
+    margin: 15px;
 }
 
 /* styling header */
@@ -17,13 +23,14 @@ html {
     display: flex;
     align-items: center;
 
-    background-color: antiquewhite;
-    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     height: 80px;
 
     font-size: larger;
 
-    margin: 0;
+    margin: 20px 20px 0 20px;
 }
 
 #header-text {
@@ -41,25 +48,33 @@ html {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: space-between;
 
     position: fixed;
     top: 100px;
 
-    border: 1px solid;
-    border-radius: 5px;
-    background-color: lightgray;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: white;
 
     padding: 10px;
+    margin: 20px;
 
-    width: 460px;
+    max-width: 800px;
 }
 
 #div-for-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
-    width: 460px;
+    width: 100%;
+}
+
+#div-for-edit-and-close-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
 }
 
 .create-divs {
@@ -72,31 +87,28 @@ html {
 .inside-div-left {
     padding: 10px;
     margin-right: 20px;
-
-    border-radius: 5px;
-    border: 1px solid;
 }
 
 .left-menu-divs {
-    background-color: lightgray;
-
-    border-radius: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
     margin: 3px;
-    padding: 1px;
+    padding: 5px;
+
+    cursor: pointer;
 }
 
 /* styling right bar */
 .inside-div-right {
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     flex-direction: column;
 
     padding: 10px;
 
-    border-radius: 5px;
-    border: 1px solid;
     width: 100%;
 }
 
@@ -104,15 +116,16 @@ html {
 #div-for-tasks{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
 }
 
 .div-task {
-    border: 1px solid;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     max-width: 1135.340px;
 
-    padding: 3px 10px;
+    padding: 7px 10px;
 }
 
 .first-level {
@@ -138,12 +151,15 @@ html {
 }
 
 #create-button {
-    border: 1px solid;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     max-width: 1135.340px;
 
     padding: 3px 10px;
     margin: 1px;
+
+    cursor: pointer;
 }
 
 #html-div {

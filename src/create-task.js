@@ -59,8 +59,12 @@ let createTask = (function() {
             editObject();
             createModule.closeCreateForm();
         })
-        createModule.createForm.appendChild(editButton);
-        createModule.createCloseButton();
+
+        const divForEditAndCloseButtons = document.createElement('div');
+        divForEditAndCloseButtons.id = 'div-for-edit-and-close-buttons';
+        divForEditAndCloseButtons.appendChild(editButton);
+        divForEditAndCloseButtons.appendChild(createModule.closeButton);
+        createModule.createForm.appendChild(divForEditAndCloseButtons);
     }
 
     // putting tasks divs in DOM
