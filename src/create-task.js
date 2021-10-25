@@ -21,8 +21,18 @@ let createTask = (function() {
         }
     }
 
+    // delete button functionality
+    function deleteTask() {
+        let index = this.getAttribute("data-index");
+        console.log(index);
+        myTasks.splice(index, 1);
+        createModule.clearTasksDivs();
+        printMyTasks();
+        console.log(myTasks);
+    }
+
     // edit button functionality
-    let index;
+    let editIndex;
 
     function editTask() {
         clearCreateButton();
@@ -33,10 +43,10 @@ let createTask = (function() {
     }
 
     function editObject() {
-        myTasks[index].name = createModule.nameInput.value;
-        myTasks[index].status = createModule.status.value;
-        myTasks[index].date = createModule.dateInput.value;
-        myTasks[index].description = createModule.descrInput.value;
+        myTasks[editIndex].name = createModule.nameInput.value;
+        myTasks[editIndex].status = createModule.status.value;
+        myTasks[editIndex].date = createModule.dateInput.value;
+        myTasks[editIndex].description = createModule.descrInput.value;
 
         createModule.clearTasksDivs();
         printMyTasks();
@@ -51,15 +61,6 @@ let createTask = (function() {
         })
         createModule.createForm.appendChild(editButton);
         createModule.createCloseButton();
-    }
-
-    // delete button functionality
-    function deleteTask() {
-        index = this.getAttribute("data-index");
-        myTasks.splice(index, 1);
-        createModule.clearTasksDivs();
-        printMyTasks();
-        console.log(myTasks);
     }
 
     // putting tasks divs in DOM
@@ -105,9 +106,13 @@ let createTask = (function() {
 
             // edit button
             const editButton = document.createElement('button');
+            editButton.setAttribute("data-index", taskCounter);
             editButton.id = 'edit-button';
             editButton.textContent = 'edit';
             editButton.addEventListener('click', () => {
+                editIndex = editButton.getAttribute("data-index");
+                console.log(editIndex);
+
                 editTask();
             });
             buttonDiv.appendChild(editButton);
